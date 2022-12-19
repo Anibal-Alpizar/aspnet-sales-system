@@ -27,7 +27,7 @@ namespace PresentationLayerAdmin.Controllers
         
         public ActionResult TestPage()
         {
-            ViewBag.Message = "Your contact page.";
+           
             return View();
         }
     }
