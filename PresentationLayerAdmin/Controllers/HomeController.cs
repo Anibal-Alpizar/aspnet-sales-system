@@ -26,8 +26,7 @@ namespace PresentationLayerAdmin.Controllers
         }
         
         public ActionResult TestPage()
-        {
-           
+        {     
             return View();
         }
     }
