@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\PresentationLayerAdmin",
-    "\\PresentationLayerAdmin\\Controllers"
+    "\\PresentationLayerAdmin\\Views",
+    "\\PresentationLayerAdmin\\Views\\Shared"
   ],
-  "SelectedNode": "\\PresentationLayerAdmin\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\PresentationLayerAdmin\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }
