@@ -11,3 +11,4 @@ namespace LayerData
     {
         public static string cn = ConfigurationManager.ConnectionStrings["string"].ToString();
     }
+}

@@ -1,0 +1,9 @@
+C:\Users\anibal\AspNet-SalesSystem\LayerData\bin\Debug\LayerData.dll
+C:\Users\anibal\AspNet-SalesSystem\LayerData\bin\Debug\LayerData.pdb
+C:\Users\anibal\AspNet-SalesSystem\LayerData\bin\Debug\LayerEntity.dll
+C:\Users\anibal\AspNet-SalesSystem\LayerData\bin\Debug\LayerEntity.pdb
+C:\Users\anibal\AspNet-SalesSystem\LayerData\obj\Debug\LayerData.csproj.AssemblyReference.cache
+C:\Users\anibal\AspNet-SalesSystem\LayerData\obj\Debug\LayerData.csproj.CoreCompileInputs.cache
+C:\Users\anibal\AspNet-SalesSystem\LayerData\obj\Debug\LayerData.csproj.CopyComplete
+C:\Users\anibal\AspNet-SalesSystem\LayerData\obj\Debug\LayerData.dll
+C:\Users\anibal\AspNet-SalesSystem\LayerData\obj\Debug\LayerData.pdb

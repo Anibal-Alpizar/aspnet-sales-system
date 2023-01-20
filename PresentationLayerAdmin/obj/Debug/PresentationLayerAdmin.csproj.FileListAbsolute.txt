@@ -314,3 +314,9 @@ C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\obj\Debug\Presentation
 C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\obj\Debug\PresentationLayerAdmin.csproj.CopyComplete
 C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\obj\Debug\PresentationLayerAdmin.dll
 C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\obj\Debug\PresentationLayerAdmin.pdb
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerBusiness.dll
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerEntity.dll
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerData.dll
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerBusiness.pdb
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerEntity.pdb
+C:\Users\anibal\AspNet-SalesSystem\PresentationLayerAdmin\bin\LayerData.pdb
