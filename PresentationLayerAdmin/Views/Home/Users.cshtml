@@ -40,16 +40,39 @@
 
 @section scripts{
 <script>
+
+    var datadable;
+
     jQuery.ajax({
         url: '@Url.Action("ListUsers","Home")',
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         success: (data) => {
-            debugger;
-            const text1 = "hola"
             console.log(data)
         }
     })
+
+    datadable = $('#table').DataTable({
+        responsive: true,
+        ordering: false,
+        "ajax": {
+            url: '@Url.Action("ListUsers","Home")',
+            type: 'GET',
+            dataType: 'json',
+        },
+        "columns": [
+            { "data": "Nombres" },
+            { "data": "Apellidos" },
+            { "data": "Correo" },
+            {
+                "data": "Activo", "render":
+                    (data) => {
+                        return data ? '<span class="badge bg-success">Activo</span>' : '<span class="badge bg-danger">Inactivo</span>'
+                    }
+            }
+        ]
+    });
+
 </script>
 }
