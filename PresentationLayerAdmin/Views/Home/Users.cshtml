@@ -39,17 +39,17 @@
 </div>
 
 @section scripts{
-    <script>
-        jQuery.ajax({
-            url: '@Url.Action("ListUsers","Home")',
-            type: 'GET',
-            dataType: 'json',
-            contentType: 'application/json; charset=utf-8',
-            success: (data) => {
-                debugger;
-                const text1 = "hola"
-                console.log(data)
-            }
-        })
-    </script>
+<script>
+    jQuery.ajax({
+        url: '@Url.Action("ListUsers","Home")',
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
+        success: (data) => {
+            debugger;
+            const text1 = "hola"
+            console.log(data)
+        }
+    })
+</script>
 }
