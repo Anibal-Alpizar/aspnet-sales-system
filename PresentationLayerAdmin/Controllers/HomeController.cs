@@ -20,12 +20,12 @@ namespace PresentationLayerAdmin.Controllers
             return View();
         }
 
+        [HttpGet]
         public JsonResult ListUsers()
         {
             List<Usuario> oList = new List<Usuario>();
             oList = new CN_Users().List();
             return Json(oList, JsonRequestBehavior.AllowGet);
         }
-
     }
 }
