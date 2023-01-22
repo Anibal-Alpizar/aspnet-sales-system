@@ -17,7 +17,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-12">
-                <button type="button" class="btn btn-success">Create User</button>
+                <button type="button" class="btn btn-success" onclick="openModal()">Create User</button>
             </div>
         </div>
         <hr />
@@ -33,28 +33,59 @@
                 </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="FormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="exampleModalLabel">User Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body g-2">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="txtnames" class="form-label">Names</label>
+                        <input type="text" class="form-control" id="txtnames" placeholder="Enter your names">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="txtlastname" class="form-label">Lastname</label>
+                        <input type="text" class="form-control" id="txtlastname" placeholder="Enter your lastname">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="txtEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="Enter your email">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Activo" class="form-label">Active</label>
+                        <select class="form-select" id="Activo">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
 </div>
 
 @section scripts{
 <script>
 
-    var datadable;
-
-    jQuery.ajax({
-        url: '@Url.Action("ListUsers","Home")',
-        type: 'GET',
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        success: (data) => {
-            console.log(data)
-        }
-    })
-
-    datadable = $('#table').DataTable({
+    var datadable = $('#table').DataTable({
         responsive: true,
         ordering: false,
         "ajax": {
@@ -79,10 +110,14 @@
                 "searchable": false,
                 "width": "90px"
             }
-
-        ]
+        ],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json"
+        }
 
     });
+
+    const openModal = () => $('#FormModal').modal('show');
 
 </script>
 }
