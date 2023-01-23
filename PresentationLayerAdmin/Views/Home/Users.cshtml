@@ -84,8 +84,8 @@
 
 @section scripts{
 <script>
-
-    var datadable = $('#table').DataTable({
+    var datadable
+    datadable = $('#table').DataTable({
         responsive: true,
         ordering: false,
         "ajax": {
@@ -104,7 +104,7 @@
                     }
             },
             {
-                "defaultContent": '<button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pen"></i></button>' + ' ' +
+                "defaultContent": '<button type="button" class="btn btn-primary btn-sm btn-edit"><i class="fas fa-pen"></i></button>' + ' ' +
                     '<button type="button" class="btn btn-danger btn-sm ml-1"><i class="fas fa-trash"></i></button>',
                 "orderable": false,
                 "searchable": false,
@@ -118,6 +118,11 @@
     });
 
     const openModal = () => $('#FormModal').modal('show');
+
+    $('#table tbody').on('click', '.btn-edit', function () {
+        const data = datadable.row($(this).parents('tr')).data();
+        console.log(data);
+    });
 
 </script>
 }
