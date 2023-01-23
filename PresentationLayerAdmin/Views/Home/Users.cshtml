@@ -78,7 +78,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary" onclick="save()">Save</button>
             </div>
         </div>
     </div>
@@ -87,6 +87,7 @@
 @section scripts{
 <script>
     var datadable
+    var selectedRow
     datadable = $('#table').DataTable({
         responsive: true,
         ordering: false,
@@ -131,16 +132,29 @@
             $('#txtnames').val(data.Nombres);
             $('#txtlastname').val(data.Apellidos);
             $('#txtEmail').val(data.Correo);
-            $('#Active').val(data.Activo);
+            $('#Active').val(data.Activo ? 'true' : 'false');
         }
         $('#FormModal').modal('show');
     }
 
     $('#table tbody').on('click', '.btn-edit', function () {
-        const data = datadable.row($(this).parents('tr')).data();
+        selectedRow = $(this).parents('tr');
+        const data = datadable.row(selectedRow).data();
         console.log(data);
         openModal(data);
     });
+
+    const save = () => {
+        var user = {
+            IdUsuario: $('#txtId').val(),
+            Nombres: $('#txtnames').val(),
+            Apellidos: $('#txtlastname').val(),
+            Correo: $('#txtEmail').val(),
+            Activo: $('#Active').val() == 'true' ? true : false
+        }
+        user.IdUsuario == 0 ? datadable.row.add(user).draw(false) : datadable.row(selectedRow).data(user).draw(false);
+        $('#FormModal').modal('hide');
+    }
 
 
 
