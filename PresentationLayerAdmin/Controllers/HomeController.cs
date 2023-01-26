@@ -26,7 +26,32 @@ namespace PresentationLayerAdmin.Controllers
             List<Usuario> oList = new List<Usuario>();
             oList = new CN_Users().List();
             // structure for use a Jquery Datatable
-            return Json(new { data = oList }, JsonRequestBehavior.AllowGet);
+            return Json(new
+            {
+                data = oList
+            }, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult SaveUser(Usuario obj)
+        {
+            object result;
+            string mensaje = string.Empty;
+
+            if (obj.IdUsuario == 0)
+            {
+                result = new CN_Users().Register(obj, out mensaje);
+            }
+            else
+            {
+                result = new CN_Users().Update(obj, out mensaje);
+            }
+            return Json(new
+            {
+                result = result,
+                mensaje = mensaje
+            }, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
