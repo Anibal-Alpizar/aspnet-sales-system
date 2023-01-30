@@ -144,7 +144,7 @@
         openModal(data);
     });
 
-    const save = () => {
+    function Save (){
         var user = {
             IdUsuario: $('#txtId').val(),
             Nombres: $('#txtnames').val(),
@@ -152,10 +152,29 @@
             Correo: $('#txtEmail').val(),
             Activo: $('#Active').val() == 'true' ? true : false
         }
-        user.IdUsuario == 0 ? datadable.row.add(user).draw(false) : datadable.row(selectedRow).data(user).draw(false);
-        $('#FormModal').modal('hide');
-    }
+        jQuery.ajax({
+            url: '@Url.Action("SaveUser","Home")',
+            type: 'POST',
+            data: JSON.stringify({ object : user }),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8', 
+            success: function (data) {
 
+                if (user.IdUsuario == 0) {
+                    datadable.row.add(user).draw(false);
+                } else {
+                    datadable.row(selectedRow).data(user).draw(false);
+                }
+                
+            },
+            error: function (error) {
+                console.log(error);
+            },
+            beforeSend: function () {
+                console.log('beforeSend');
+            },
+        });
+    }
 
 </script>
 }
