@@ -164,7 +164,7 @@
 
                 if (user.IdUsuario == 0) {
 
-                    if (data.IdUsuario != 0) {
+                    if (data.result != 0) {
                         user.IdUsuario = data.result;                        
                         datadable.row.add(user).draw(false);
                         $('#FormModal').modal('hide');   
